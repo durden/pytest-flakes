@@ -39,7 +39,7 @@ Running it with pytest-flakes installed shows two issues::
     ______________________________ pyflakes-check ______________________________
     /tmp/doc-exec-685/module.py:2: UnusedImport
     'os' imported but unused
-    /tmp/doc-exec-685/module.py:3: ImportStarUsed
+    /tmp/doc-exec-685/module.py:3: ImportStarUsage
     'from os.path import *' used; unable to detect undefined names
     1 failed in 0.00 seconds
 
@@ -54,7 +54,7 @@ or ``setup.cfg`` file like this::
 
     # content of setup.cfg
     [pytest]
-    flakes-ignore = ImportStarUsed
+    flakes-ignore = ImportStarUsage
 
 This would globally prevent complaints about star imports.
 Rerunning with the above example will now look better::
